@@ -1,6 +1,6 @@
 **Easy Clash QQ** is (Tower Defence clone) 2D game in which you try to prevent the enemies from getting to your home castle by placing towers.
 >**Objectives**
-* You have to place **towers** in specific places alone the path of the enemies.
+* You have to place **towers** in specific places along the path of the enemies.
 * The number of enemies increments as you get into higher levels.
 * You have different types of towers, each type has its cost place.
 
