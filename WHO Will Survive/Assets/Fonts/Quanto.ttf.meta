@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 58520587a8eb7f6479b00db23e3e2d91
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Quanto
+  fontNames:
+  - Quanto
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 459625f1616ee4b4c9255a54b5a2ea22, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
