@@ -1,7 +1,7 @@
-This repository includes mini games developed by **Unity** game engine in both 2D & 3D Perspectives.
+This repository includes mini games developed by **Unity3D** game engine in both 2D & 3D Perspectives.
 > 2D Games
-* Avengers: Infinity lines
+* AVENGERS: Infinity lines
 * Breakings Out
-* Easy Clash QQ
+* Death Path
 > 3D Game
 * Legend Of Archa
