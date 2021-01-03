@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7504a3bec1f0d49998f98ac7241447, type: 3}
+  m_Name: Levels Library
+  m_EditorClassIdentifier: 
+  levelEntriesList:
+  - LevelIndex: 0
+    Planet: 0
+    LevelAvenger: {fileID: 114560770647759012, guid: f56b1c68562997941aec5cc00866631c,
+      type: 3}
+    StoneType: 1
+    LevelLine: {fileID: 114210680577014882, guid: 15fdb1607c79bb04b8c570d4cdf781fc,
+      type: 3}
+    maxLinesCount: 1
+    maxLineLength: 200
+    EnemyUnits:
+    - EnemyState: 0
+      SpawnPostion: {x: 0, y: 0, z: 0}
+  - LevelIndex: 1
+    Planet: 0
+    LevelAvenger: {fileID: 114490732392815078, guid: bb40c5e2db9309b4c82006f8f48f48c7,
+      type: 3}
+    StoneType: 2
+    LevelLine: {fileID: 114210680577014882, guid: 15fdb1607c79bb04b8c570d4cdf781fc,
+      type: 3}
+    maxLinesCount: 1
+    maxLineLength: 50
+    EnemyUnits:
+    - EnemyState: 0
+      SpawnPostion: {x: -2.7, y: 5.4, z: 0}
+    - EnemyState: 0
+      SpawnPostion: {x: 2, y: 0.88, z: 0}
+    - EnemyState: 0
+      SpawnPostion: {x: 8, y: -1.8, z: 0}
+    - EnemyState: 0
+      SpawnPostion: {x: -5.3, y: -5.25, z: 0}
+    - EnemyState: 0
+      SpawnPostion: {x: 1.2, y: -7.5, z: 0}
+  - LevelIndex: 2
+    Planet: 3
+    LevelAvenger: {fileID: 114245991071541976, guid: 3bab48acc7548374e910e61227890ac5,
+      type: 3}
+    StoneType: 5
+    LevelLine: {fileID: 114210680577014882, guid: 9b153976ca5d9d04dbfe369002bed288,
+      type: 3}
+    maxLinesCount: 1
+    maxLineLength: 100
+    EnemyUnits:
+    - EnemyState: 0
+      SpawnPostion: {x: -5, y: 6.51, z: 0}
+    - EnemyState: 0
+      SpawnPostion: {x: -5, y: 2.5, z: 0}
+    - EnemyState: 0
+      SpawnPostion: {x: -5, y: -2.5, z: 0}
+    - EnemyState: 0
+      SpawnPostion: {x: -5, y: -6.5, z: 0}
+    - EnemyState: 0
+      SpawnPostion: {x: -9.5, y: 6.51, z: 0}
+    - EnemyState: 0
+      SpawnPostion: {x: -9.5, y: 2.5, z: 0}
+    - EnemyState: 0
+      SpawnPostion: {x: -9.5, y: -2.5, z: 0}
+    - EnemyState: 0
+      SpawnPostion: {x: -9.5, y: -6.5, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: -1, y: 0, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 2.3, y: -3, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 5, y: -6.5, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 7, y: 5, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 11, y: 0, z: 0}
+  - LevelIndex: 3
+    Planet: 2
+    LevelAvenger: {fileID: 114393608602347788, guid: b5967b97f78c80c4ea1ad275c1919c7b,
+      type: 3}
+    StoneType: 4
+    LevelLine: {fileID: 114210680577014882, guid: 9b153976ca5d9d04dbfe369002bed288,
+      type: 3}
+    maxLinesCount: 3
+    maxLineLength: 35
+    EnemyUnits:
+    - EnemyState: 0
+      SpawnPostion: {x: -7.5, y: 8, z: 0}
+    - EnemyState: 0
+      SpawnPostion: {x: -7.5, y: 5, z: 0}
+    - EnemyState: 0
+      SpawnPostion: {x: -7.5, y: 2, z: 0}
+    - EnemyState: 0
+      SpawnPostion: {x: 0, y: 5, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 0, y: -3, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: -3.75, y: -5, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: -7.5, y: -7, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 3.75, y: -5, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 7.5, y: -7, z: 0}
+  - LevelIndex: 4
+    Planet: 0
+    LevelAvenger: {fileID: 114606736382763852, guid: 868cd846f8becca4c8f1e0652d63ed95,
+      type: 3}
+    StoneType: 0
+    LevelLine: {fileID: 114210680577014882, guid: 15fdb1607c79bb04b8c570d4cdf781fc,
+      type: 3}
+    maxLinesCount: 3
+    maxLineLength: 30
+    EnemyUnits:
+    - EnemyState: 1
+      SpawnPostion: {x: -7, y: 7, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: -7, y: 3.5, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: -7, y: 0, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: -7, y: -3.5, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: -7, y: -7, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 0, y: 7, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 0, y: 3.5, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 0, y: 0, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 0, y: -3.5, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 0, y: -7, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 7, y: 7, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 7, y: 3.5, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 7, y: 0, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 7, y: -3.5, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 7, y: -7, z: 0}
+  - LevelIndex: 5
+    Planet: 1
+    LevelAvenger: {fileID: 114692053921733396, guid: 0451396f6c16e0c47851cdf4fcb1bb37,
+      type: 3}
+    StoneType: 6
+    LevelLine: {fileID: 114210680577014882, guid: 94d2401a510b53540affa7594b7649f6,
+      type: 3}
+    maxLinesCount: 5
+    maxLineLength: 20
+    EnemyUnits:
+    - EnemyState: 2
+      SpawnPostion: {x: -7.5, y: 5.5, z: 0}
+    - EnemyState: 2
+      SpawnPostion: {x: -7.5, y: 0, z: 0}
+    - EnemyState: 2
+      SpawnPostion: {x: -7.5, y: -5.5, z: 0}
+    - EnemyState: 2
+      SpawnPostion: {x: 0, y: 5.5, z: 0}
+    - EnemyState: 2
+      SpawnPostion: {x: 0, y: 0, z: 0}
+    - EnemyState: 2
+      SpawnPostion: {x: 0, y: -5.5, z: 0}
+    - EnemyState: 2
+      SpawnPostion: {x: 7.5, y: 5.5, z: 0}
+    - EnemyState: 2
+      SpawnPostion: {x: 7.5, y: 0, z: 0}
+    - EnemyState: 2
+      SpawnPostion: {x: 7.5, y: -5.5, z: 0}
+  - LevelIndex: 6
+    Planet: 3
+    LevelAvenger: {fileID: 114264240045456748, guid: a59a630a36b4a0b479b180d950f72c31,
+      type: 3}
+    StoneType: 3
+    LevelLine: {fileID: 114210680577014882, guid: 15fdb1607c79bb04b8c570d4cdf781fc,
+      type: 3}
+    maxLinesCount: 3
+    maxLineLength: 50
+    EnemyUnits:
+    - EnemyState: 1
+      SpawnPostion: {x: -13.5, y: 0, z: 0}
+    - EnemyState: 1
+      SpawnPostion: {x: 13.5, y: 0, z: 0}
+    - EnemyState: 2
+      SpawnPostion: {x: -4, y: 4.5, z: 0}
+    - EnemyState: 2
+      SpawnPostion: {x: 1.7, y: 1.7, z: 0}
+    - EnemyState: 2
+      SpawnPostion: {x: 6.5, y: -1, z: 0}
+    - EnemyState: 2
+      SpawnPostion: {x: -8, y: 0, z: 0}
+    - EnemyState: 2
+      SpawnPostion: {x: -3, y: -3.5, z: 0}
+    - EnemyState: 2
+      SpawnPostion: {x: 3, y: -7, z: 0}
