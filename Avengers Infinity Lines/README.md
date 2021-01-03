@@ -1,8 +1,19 @@
-**Avengers: Infinity lines** is a 2D game in which you try to save the world by beating thanos using the selected avenger, so you have to be wise while choosing one.
->**Objective**
-* You have to draw the line that makes your avenger reaches thanos and hit him to pass the level, Also you have to avoid the enemies that appear in higher levels.
-* You have a variety of **Avengers** to choose from.
-* You have different types of **lines** to be drawn, each one has a specific ability.
+>**Brief**
+
+**Avengers: Infinity lines** is a 2D game inspired by Marvel's **Avengers: Infinity War** movie in which the player tries to collect the Infinity Stones by drawing lines (path) in various levels that the Avengers will take to save the universe.
+Infinity Lines represents a puzzle that can be solved through completing the levels in the right order, as each completed level provides the player a unique ability that helps him in next levels.
+
+>**Game Features**
+
+* Physics interaction and 2D collision between avengers and various types of lines.
+* Real-time line drawing.
+* Level progression.
+
+>**Supported Platforms**
+
+* PC
+
+>**Download**
 
 You can download it from [here](https://drive.google.com/open?id=1N5yuQJet50urwS9qmKXGCOA9ZrUoeNav)
 
