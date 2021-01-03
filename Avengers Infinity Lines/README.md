@@ -8,6 +8,7 @@ Infinity Lines represents a puzzle that can be solved through completing the lev
 * Physics interaction and 2D collision between avengers and various types of lines.
 * Real-time line drawing.
 * Level progression.
+* Scriptable Objects.
 
 >**Supported Platforms**
 
