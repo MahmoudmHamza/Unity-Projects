@@ -16,4 +16,4 @@
 
 Download from [here](https://drive.google.com/file/d/1r36yix_hxVxkUcJECZX5DmluMBD1mk3-/view?usp=sharing).
 
-![](https://github.com/MahmoudmHamza/Unity-Projects/blob/master/WHO%20Will%20Survive/Screenshots/WWS5.PNG)
+![](https://github.com/MahmoudmHamza/Unity-Projects/blob/master/WHO%20Will%20Survive/Screenshots/WWS1.PNG)
