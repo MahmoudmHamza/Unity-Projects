@@ -9,6 +9,7 @@ Unfortunately, there’s not enough energy for the weapon to be made because Nid
 >**Game Features**
 
 * 2D Physics Interactions.
+* Random Obstacles Spawning.
 * Overheat System.
 
 >**Supported Platforms**
