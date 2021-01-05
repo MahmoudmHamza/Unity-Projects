@@ -1,15 +1,27 @@
 fileFormatVersion: 2
 guid: 9f85b0c1b26f9e640b0ac1a416c30800
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Button Label
-    21300002: Button Label 2
-    21300004: Game Status Label
-    21300006: Weapon Label
-    21300008: UI Elements_0
-    21300010: Button Label 3
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Button Label
+  - first:
+      213: 21300002
+    second: Button Label 2
+  - first:
+      213: 21300004
+    second: Game Status Label
+  - first:
+      213: 21300006
+    second: Weapon Label
+  - first:
+      213: 21300008
+    second: UI Elements_0
+  - first:
+      213: 21300010
+    second: Button Label 3
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,8 +75,9 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -75,7 +88,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -86,7 +100,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -97,7 +112,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -108,7 +124,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -119,6 +136,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -138,6 +156,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 871765365c2b5b547abc304acb44494d
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -158,6 +177,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: bf91f12ed4c11574c8ce089cedec5d87
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -178,6 +198,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: dcf6f4de6696231458c47cd790f75497
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -198,6 +219,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 11cdf9b08cca2894182d95b1311227b1
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -218,6 +240,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: cf55a06e960b9994c911144a40748f69
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -238,6 +261,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ae7dbd615ac0db44b9c669c124d52528
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
@@ -246,10 +270,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 6169e5d897985834998487c16f2ca222
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

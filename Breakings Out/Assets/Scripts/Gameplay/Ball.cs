@@ -1,71 +1,56 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
+
 public class Ball : MonoBehaviour
 {
+    private float LifeSeconds = ConfigurationUtils.BallLifeTime;
 
-    Timer deathTimer;
-
-    float impulse = ConfigurationUtils.BallImpulseForce;
-    float LifeSeconds = ConfigurationUtils.BallLifeTime;
+    private Timer deathTimer;
 
     private BallSpawner ballspawner;
     
-    void Start()
+    private void Start()
     {
-        ballspawner = Camera.main.GetComponent<BallSpawner>();
+        this.ballspawner = Camera.main.GetComponent<BallSpawner>();
+        this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -5f), ForceMode2D.Impulse);
 
-        GetComponent<Rigidbody2D>().AddForce(
-            new Vector2(0, -5f),
-            ForceMode2D.Impulse);
-
-        deathTimer = gameObject.AddComponent<Timer>();
-        deathTimer.Duration = LifeSeconds;
-        deathTimer.Run();
+        this.InitializeDeathTimer();
     }
 
-    void Update()
+    private void Update()
     {
-        DestroyBall();
-        if (deathTimer.Finished)
+        if (!this.deathTimer.Finished)
         {
-            gameObject.tag = "Dead Ball";
-            ballspawner.BallDead = true;
+            return;
         }
-        else
-        {
-            gameObject.tag = "Ball";
-            ballspawner.BallDead = false;
-        }
+
+        this.DestroyBall();
     }
 
+    private void InitializeDeathTimer()
+    {
+        this.deathTimer = gameObject.AddComponent<Timer>();
+        this.deathTimer.Duration = this.LifeSeconds;
+        this.deathTimer.Run();
+    }
 
     public void SetDirection(Vector2 direction)
     {
-        GetComponent<Rigidbody2D>().AddForce(
-            direction,
-            ForceMode2D.Impulse);
+        this.GetComponent<Rigidbody2D>().AddForce(direction, ForceMode2D.Impulse);
     }
 
-    void OnBecameInvisible()
+    private void DestroyBall()
     {
-        ballspawner.BallOut = true;
-        gameObject.tag = "Ball Out";
+        if(this.ballspawner != null)
+        {
+            this.ballspawner.OnBallDestroyed();
+        }
+
+        Destroy(this.gameObject);
     }
 
-    void DestroyBall()
+    private void OnBecameInvisible()
     {
-        if (ballspawner.BallOut && gameObject.CompareTag("Ball Out"))
-        {
-            Destroy(gameObject);
-            ballspawner.BallsDestroyedIncrease();
-        }
-        else if(ballspawner.BallDead && gameObject.CompareTag("Dead Ball"))
-        {
-            Destroy(gameObject);
-            ballspawner.BallsDestroyedIncrease();
-        }
+        this.DestroyBall();
     }
 }
 

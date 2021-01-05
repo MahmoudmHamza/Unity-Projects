@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Viking : MonoBehaviour {
 
@@ -9,59 +7,64 @@ public class Viking : MonoBehaviour {
 
     private BallSpawner ballspawner;
 
-    Timer audioTimer;
+    private Timer audioTimer;
 
-    void Start () {
-        ballspawner = Camera.main.GetComponent<BallSpawner>();
-
-        MoveRight();
-
-        audioTimer = gameObject.AddComponent<Timer>();
-        audioTimer.Duration = 30f;
-        audioTimer.Run();
-    }
-	
-	void Update () {
-
-        if (transform.position.x >= 5f)
-        {
-            MoveLeft();
-        }
-        else if (transform.position.x <= -5f)
-        {
-            MoveRight();
-        }
-
-        AudioKing();
-    }
-
-    public void MoveRight()
+    private void Start()
     {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(Speed, GetComponent<Rigidbody2D>().velocity.y);
+        this.ballspawner = Camera.main.GetComponent<BallSpawner>();
+
+        this.MoveDirection(1);
+        this.InitializeKingAudioTimer();
     }
 
-    public void MoveLeft()
+    private void Update()
     {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-Speed, GetComponent<Rigidbody2D>().velocity.y);
-        
+        this.MoveKing();
+        this.KingAudioController();
     }
 
-    public void OnCollisionEnter2D(Collision2D coll)
+    private void InitializeKingAudioTimer()
+    {
+        this.audioTimer = this.gameObject.AddComponent<Timer>();
+        this.audioTimer.Duration = 30f;
+        this.audioTimer.Run();
+    }
+
+    private void MoveKing()
+    {
+        if (this.transform.position.x >= 5f)
+        {
+            this.MoveDirection(-1);
+        }
+        else if (this.transform.position.x <= -5f)
+        {
+            this.MoveDirection(1);
+        }
+    }
+
+    private void MoveDirection(int direction)
+    {
+        this.GetComponent<Rigidbody2D>().velocity = new Vector2(Speed * direction, GetComponent<Rigidbody2D>().velocity.y);
+    }
+
+    public void KingAudioController()
+    {
+        if (!this.audioTimer.Finished)
+        {
+            return;
+        }
+
+        SoundManager.instance.AudSource.PlayOneShot(SoundManager.instance.EnemySound[Random.Range(0, 5)]);
+        this.audioTimer.Run();
+    }
+
+    private void OnCollisionEnter2D(Collision2D coll)
     {
         if (coll.gameObject.CompareTag("Ball"))
         {
-            ballspawner.HitKing = true;
+            this.ballspawner.OnKingKilled();
             SoundManager.instance.AudSource.PlayOneShot(SoundManager.instance.KingKilled);
-            Destroy(gameObject);
-        }
-    }
-
-    public void AudioKing()
-    {
-        if (audioTimer.Finished)
-        {
-            SoundManager.instance.AudSource.PlayOneShot(SoundManager.instance.EnemySound[Random.Range(0,5)]);
-            audioTimer.Run();
+            Destroy(this.gameObject);
         }
     }
 }

@@ -1,41 +1,45 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
 
-public class HUD : MonoBehaviour {
-    private int remainBalls = 10;
-    private int totalScore = 0;
-
+public class HUD : MonoBehaviour
+{
     [SerializeField]
     Text scoreText;
+
     [SerializeField]
     Text remainText;
 
     [SerializeField]
     private Button HammerBtn;
+
     [SerializeField]
     private Button AxeBtn;
 
-    void Start () {
+    private int remainBalls = 10;
+
+    private int totalScore = 0;
+
+    void Start ()
+    {
         EventsManager.AddPointsListener(increaseScore);
         EventsManager.AddremainListener(subtractBalls);
-        scoreText.text = "Score : " + totalScore;
-        remainText.text = "Remaining Balls : " + remainBalls;
+        scoreText.text = "Score: " + totalScore;
+        remainText.text = "Remaining Rocks: " + remainBalls;
         HammerBtn.enabled = false;
         AxeBtn.enabled = false;
     }
 	
-	void Update () {
-        scoreText.text = "Score : " + totalScore;
-        remainText.text = "Remaining Balls : " + remainBalls;
+	private void Update()
+    {
+        scoreText.text = "Score: " + totalScore;
+        remainText.text = "Remaining Rocks: " + remainBalls;
         CheckScore(totalScore);
     }
 
     public void subtractBalls(int unused)
     {
-        remainBalls -= 1;
+        this.remainBalls -= 1;
+        this.remainBalls = this.remainBalls < 0 ? 0 : this.remainBalls;
     }
 
     public void increaseScore(int points)

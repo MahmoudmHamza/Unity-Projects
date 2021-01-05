@@ -1,15 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
+using System.Collections;
 
-public enum GameStatus { Play , Win , Lose}
+public enum GameStatus
+{
+    Play,
+    Win,
+    Lose
+}
 
-public class BallSpawner : MonoBehaviour {
+public class BallSpawner : MonoBehaviour
+{
+    private float minSec = ConfigurationUtils.MinSpawnSeconds;
 
-    BallsRemainingEvent ballRemainingEvent = new BallsRemainingEvent();
+    private float maxSec = ConfigurationUtils.MaxSpawnSeconds;
 
     [SerializeField]
     private GameObject ballPrefab;
@@ -22,150 +28,197 @@ public class BallSpawner : MonoBehaviour {
 
     [SerializeField]
     Text gameStatusText;
+
     [SerializeField]
     Image gameStatusImg;
 
-
-    Vector2 spawnLocationMin;
-    Vector2 spawnLocationMax;
-    Timer respawnTimer;
-    Timer speedTimer;
-
-    float minSec = ConfigurationUtils.MinSpawnSeconds;
-    float maxSec = ConfigurationUtils.MaxSpawnSeconds;
-    public List<GameObject> ballList = new List<GameObject>();
-
-    private int ballDestroyed = 0;
-    private int blocksDestroyed = 0;
-
     [SerializeField]
     private int totalBalls = 10;
+
     private GameStatus gameStatus = GameStatus.Play;
 
-    private bool ballSpawned = false;
-    private bool ballDead = false;
-    private bool ballOut = false;
-    private bool gameEnded = false;
-    private bool buttonPressed = true;
-    private bool hitKing = false;
-    private bool speedy = false;
+    public List<GameObject> ballList = new List<GameObject>();
 
-    public bool BallDead
+    BallsRemainingEvent ballRemainingEvent = new BallsRemainingEvent();
+
+    private int ballDestroyed = 0;
+
+    private int blocksDestroyed = 0;
+
+    private bool isGameEnded = false;
+
+    private bool isRockActive = false;
+
+    private bool isSpeedEffectEnabled = false;
+
+    Timer speedTimer;
+
+    private Coroutine activeCoroutine;
+
+    private void Start()
     {
-        get
+        this.InitializeSceneProperties();
+        this.InitializeEvents();
+
+        this.SpawnRock();
+    }
+
+    private void FixedUpdate()
+    {
+        if (this.isGameEnded)
         {
-            return ballDead;
+            return;
         }
-        set
+
+        this.HandleSpeedEffect();
+    }
+
+    private void Update()
+    {
+        if (this.isGameEnded)
         {
-            ballDead = value;
+            return;
+        }
+
+        this.CheckGameState();
+    }
+
+    private void HandleSpeedEffect()
+    {
+        if (!this.isSpeedEffectEnabled)
+        {
+            return;
+        }
+
+        if (this.speedTimer.Finished)
+        {
+            Time.timeScale = 1f;
         }
     }
 
-    public bool BallOut
+    private void InitializeSceneProperties()
     {
-        get
-        {
-            return ballOut;
-        }
-        set
-        {
-            ballOut = value;
-        }
-    }
-
-    public bool BallSpawned
-    {
-        get
-        {
-            return ballSpawned;
-        }
-        set
-        {
-            ballSpawned = value;
-        }
-    }
-
-
-    public bool HitKing
-    {
-        get
-        {
-            return hitKing;
-        }
-        set
-        {
-            hitKing = value;
-        }
-    }
-
-    void Start () {
         Time.timeScale = 1f;
+        this.gameStatus = GameStatus.Play;
+        this.isGameEnded = false;
+        this.gameStatusImg.gameObject.SetActive(false);
+        this.speedTimer = this.gameObject.AddComponent<Timer>();
+    }
 
-        gameStatusImg.gameObject.SetActive(false);
-
+    private void InitializeEvents()
+    {
         EventsManager.AddRemainInvoker(this);
         EventsManager.AddSpeedListener(SpeedEffect);
         EventsManager.AddBlocksListener(DestroyedBlocksIncrease);
-
-        speedTimer = gameObject.AddComponent<Timer>();
-        respawnTimer = gameObject.AddComponent<Timer>();
-        respawnTimer.Duration = Random.Range(minSec,maxSec);
-        respawnTimer.Run();
-
-        FirstSpawn();
     }
 
-    void FixedUpdate()
+    public void SpawnRock()
     {
-        if (speedy)
-        {
-            if (speedTimer.Finished)
-            {
-                Time.timeScale = 1f;
-                Debug.Log("RUN");
-            }
-        }
-    }
-
-    void Update() {
-        if(!hitKing)
-        {
-            gameStatus = GameStatus.Play;
-            GameState();
-        }
-        else
-        {
-            gameStatus = GameStatus.Win;
-            showMenu();
-        }
-    }
-
-    public void BallSpawn()
-    {
-        ballSpawned = true;
-        GameObject newBall = Instantiate(ballPrefab);
+        var newBall = Instantiate(this.ballPrefab);
         newBall.transform.position = spwanPt.transform.position;
-        RegisterBall(newBall);
-        ballRemainingEvent.Invoke(0);
+
+        this.RegisterBall(newBall);
+        this.ballRemainingEvent.Invoke(0);
+
+        this.isRockActive = true;
     }
 
-    public void FirstSpawn()
+    public void OnBallDestroyed()
     {
-        GameObject newBall = Instantiate(ballPrefab);
-        newBall.transform.position = spwanPt.transform.position;
-        RegisterBall(newBall);
-        ballRemainingEvent.Invoke(0);
+        if (this.activeCoroutine != null)
+        {
+            return;
+        }
+
+        this.isRockActive = false;
+        this.ballDestroyed++;
+        this.activeCoroutine = this.StartCoroutine(this.WaitThenSpawnBall());
+    }
+
+    public void OnKingKilled()
+    {
+        this.isGameEnded = true;
+        this.gameStatus = GameStatus.Win;
+        this.ConcludeGame();
+    }
+
+    private IEnumerator WaitThenSpawnBall()
+    {
+        yield return new WaitForSeconds(1);
+
+        if (!this.isGameEnded && !this.isRockActive)
+        {
+            this.SpawnRock();
+        }
+
+        this.activeCoroutine = null;
+    }
+
+    private void CheckGameState()
+    {
+        if (this.ballDestroyed < this.totalBalls)
+        {
+            return;
+        }
+
+        this.isGameEnded = true;
+        this.gameStatus = GameStatus.Lose;
+        this.ConcludeGame();
+    }
+
+    private void SpeedEffect(float speedDuration)
+    {
+        this.speedTimer.Duration = speedDuration;
+        this.speedTimer.Run();
+        Time.timeScale = 1.5f;
+        this.isSpeedEffectEnabled = true;
+    }
+
+    public void DestroyedBlocksIncrease(int unused)
+    {
+        this.blocksDestroyed += 1;
+    }
+
+    public void BallRemainingEventListener(UnityAction<int> listener)
+    {
+        this.ballRemainingEvent.AddListener(listener);
+    }
+
+    public void ConcludeGame()
+    {
+        Time.timeScale = 0;
+
+        switch (this.gameStatus)
+        {
+            case GameStatus.Win:
+                this.InitializeGameStatusPanel("You Win");
+                break;
+
+            case GameStatus.Lose:
+                this.InitializeGameStatusPanel("Game Over");
+                break;
+
+            default:
+                this.gameStatusImg.gameObject.SetActive(false);
+                break;
+        }
+    }
+
+    private void InitializeGameStatusPanel(string content)
+    {
+        this.gameStatusText.text = content;
+        this.gameStatusImg.gameObject.SetActive(true);
+        this.DestroyAllBalls();
     }
 
     public void RegisterBall(GameObject ball)
     {
-        ballList.Add(ball);
+        this.ballList.Add(ball);
     }
 
     public void UnRegisterBall(GameObject ball)
     {
-        ballList.Remove(ball);
+        this.ballList.Remove(ball);
         Destroy(ball.gameObject);
     }
 
@@ -175,77 +228,7 @@ public class BallSpawner : MonoBehaviour {
         {
             Destroy(ball.gameObject);
         }
-        ballList.Clear();
-    }
 
-    public void BallsDestroyedIncrease()
-    {
-        ballDestroyed += 1;
-    }
-
-    public void GameState()
-    {
-        if (ballDestroyed < totalBalls)
-        {
-            if (!ballDead || !ballOut)
-            {
-                if (respawnTimer.Finished && !ballSpawned)
-                {
-                    BallSpawn();
-                    respawnTimer.Duration = Random.Range(minSec, maxSec);
-                    respawnTimer.Run();
-                    ballSpawned = false;
-                }
-            }
-            else
-            {
-                ballOut = false;
-                ballDead = false;
-            }
-        }
-        else
-        {
-            gameStatus = GameStatus.Lose;
-            showMenu();
-        }
-    }
-
-    public void DestroyedBlocksIncrease(int unused)
-    {
-        blocksDestroyed += 1;
-    }
-
-    public void BallRemainingEventListener(UnityAction<int> listener)
-    {
-        ballRemainingEvent.AddListener(listener);
-    }
-
-    public void showMenu()
-    {
-        Time.timeScale = 0;
-        switch (gameStatus)
-        {
-            case GameStatus.Win:
-                gameStatusImg.gameObject.SetActive(true);
-                gameStatusText.text = "You Win";
-                DestroyAllBalls();
-                break;
-            case GameStatus.Lose:
-                gameStatusImg.gameObject.SetActive(true);
-                gameStatusText.text = "Game Over";
-                DestroyAllBalls();
-                break;
-            default:
-                gameStatusImg.gameObject.SetActive(false);
-                break;
-        }
-    }
-
-    void SpeedEffect(float speedTime)
-    {
-        speedTimer.Duration = speedTime;
-        speedTimer.Run();
-        Time.timeScale = 2f;
-        speedy = true;
+        this.ballList.Clear();
     }
 }
