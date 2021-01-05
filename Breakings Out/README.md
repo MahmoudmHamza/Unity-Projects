@@ -17,3 +17,5 @@
 >**Download**
 
 Download first version from [here](https://drive.google.com/file/d/1PbJGRqL_WSTCM_87rA1QYSILjowylKBi/view).
+
+Download latest version from [here](https://drive.google.com/file/d/1rad4jZcMhbnXXoFZ6HAPoSNcQNjywXqJ/view?usp=sharing).
