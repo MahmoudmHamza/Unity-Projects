@@ -523,13 +523,13 @@ MonoBehaviour:
     last hope.
 
 
-    Your main duty is to stand against his forces and kill that
-    king. <color=yellow>Head to <color=cyan>Objectives</color> tab to know more</color>.
+    Your main duty is to stand against that king & his forces. <color=yellow>Head
+    to <color=cyan>Objectives</color> tab to know more</color>.
 
 
-    During
-    the battle, <color=orange>Rocks</color> are used to destroy the army walls that
-    protect the king, but beware that not all walls should be destroyed. <color=yellow>Head
+    During the
+    battle, <color=orange>Rocks</color> are used to destroy the army walls that protect
+    the king, but beware that not all walls should be destroyed. <color=yellow>Head
     to <color=cyan>Blocks</color> tab to know more</color>.'
 --- !u!222 &106370849
 CanvasRenderer:
@@ -3960,7 +3960,7 @@ MonoBehaviour:
 
     When the
     battle starts, a Rock will fall from the center of your screen, your main objective
-    is push this <color=orange>Rock</color> towards enemy walls using your weapon
+    is to push this <color=orange>Rock</color> towards enemy walls using your weapon
     to destroy them.
 
 
