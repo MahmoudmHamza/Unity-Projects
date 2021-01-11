@@ -6,4 +6,4 @@ This repository includes mini-games developed by **Unity3D** game engine in both
 * THOR: The Star Of Nidavellir
 * WHO Will Survive
 > 3D Game
-* Legend Of Archa
+* Legend Of Arcka
