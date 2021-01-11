@@ -1,12 +1,18 @@
-**Legend of Arcka** is 3D Game in which you control your champion (Arcka) to beat up the enemy **goblins**.
->Objectives
-* You have to get level **15** to win, to pass levels you have to kill **goblins**.
-* The number of **goblins** required to pass the level is increased as you go into higher levels.
-* There're different types of **goblins** (Warrior, Archer, Giant).
-* You have 2 different attacks with both mouse clicks.
-* There's a variety of Power-ups that helps you while fighting.
+>**Brief**
 
-You can download it from [here](https://drive.google.com/open?id=1oFWmJxsWWpfckPhO6j713fvhxAhjEGP1)
+**Legend of Arcka** is a game developed using Unity3D engine in which you control a character called "Arcka" who lives in a small peaceful village. One day, the goblins showed up from no where and attacked the village. Your main objective is to rescue your people from the outsider goblins. You can also find some power ups that might help you defeating them and save the day.
 
 ![](https://github.com/MahmoudmHamza/Unity-Projects/blob/master/Legend%20of%20Arcka/Screenshots/LOA1.PNG)
 
+>**Features**
+* 3D character Physics Interaction.
+* 3D character Animation.
+* Unity NavMesh (AI Navigation).
+
+>**Download**
+
+Download it from [here](https://drive.google.com/open?id=1oFWmJxsWWpfckPhO6j713fvhxAhjEGP1).
+
+>**Note**
+
+This game is one of my first projects that introduced me to Game Development and Unity engine, So it's expected to find low quality code. Maybe one day in the future I can re-visit this project to improve it. 
