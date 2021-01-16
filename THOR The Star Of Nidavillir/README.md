@@ -1,3 +1,5 @@
+# THOR: The star of Nidavellir
+
 >**Brief**
 
 **THOR: The star of Nidavellir** is a 2D game inspired by Marvel's **Avengers: End Game** movie in which Thor’s Storm Breaker is crafted.
@@ -11,6 +13,10 @@ Unfortunately, there’s not enough energy for the weapon to be made because Nid
 * 2D Physics Interactions.
 * Random Obstacles Spawning.
 * Overheat System.
+
+>**Game Genre**
+
+Action/Platform
 
 >**Supported Platforms**
 
