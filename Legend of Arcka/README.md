@@ -1,6 +1,6 @@
 # Legend Of Arcka
 
->**Brief**
+>**Overview**
 
 **Legend of Arcka** is a game developed using Unity3D engine in which you control a character called "Arcka" who lives in a small peaceful village. One day, the goblins showed up from no where and attacked the village. Your main objective is to rescue your people from the outsider goblins. You can also find some power ups that might help you defeating them and save the day.
 
