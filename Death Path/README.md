@@ -1,6 +1,6 @@
 # Death Path
 
->**Brief**
+>**Overview**
 
 **Death Path** is a 2D game of "Tower Defense" genre developed using Unity3D engine in which you have different types of towers that should be placed to stop periodically spawning enemies from reaching your castle. The number of enemies increments each round, but killing them unlocks more powerful tower types.
 
