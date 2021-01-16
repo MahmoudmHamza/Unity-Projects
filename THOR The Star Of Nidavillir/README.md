@@ -1,6 +1,6 @@
 # THOR: The star of Nidavellir
 
->**Brief**
+>**Overview**
 
 **THOR: The star of Nidavellir** is a 2D game inspired by Marvel's **Avengers: End Game** movie in which Thor’s Storm Breaker is crafted.
 After the destruction of his hammer Mjolnir, Thor have to make a new weapon to prevent Thanos from killing half of all creatures. This type of weapons can be crafted only in a mythical place called Nidavellir.
