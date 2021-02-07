@@ -1,9 +1,25 @@
-This repository includes mini-games developed by **Unity3D** game engine in both 2D & 3D Perspectives.
-> 2D Games
-* AVENGERS: Infinity lines
-* Breakings Out
-* Death Path
-* THOR: The Star Of Nidavellir
-* WHO Will Survive
-> 3D Game
-* Legend Of Arcka
+# KnightMaze
+
+>**Overview**
+
+**KnightMaze** is 2D platformer game in which you control a knight trapped in a cursed castle and the only way to escape is to find the magical orb that can teleport you out of this nightmare. The cursed castle will try to stop you by any mean starting from generating a new maze each new level, planting ground flames and creating fake wall blocks.
+
+![](https://github.com/MahmoudmHamza/Unity-Projects/blob/master/KnightMaze/Screenshots/FeatureImage.PNG)
+
+>**Game Features**
+
+* Click & Kill game.
+* Difficulty system.
+* 2D Animation.
+
+>**Game Genre**
+
+Platformer
+
+>**Supported Platforms**
+
+* PC
+
+>**Download**
+
+Download from [here](https://drive.google.com/file/d/1RDfFeU5tekSQuC5wdmgFb5hrF2xU84Tv/view).

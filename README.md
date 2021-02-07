@@ -5,5 +5,6 @@ This repository includes mini-games developed by **Unity3D** game engine in both
 * Death Path
 * THOR: The Star Of Nidavellir
 * WHO Will Survive
+* KnightMaze
 > 3D Game
 * Legend Of Arcka
