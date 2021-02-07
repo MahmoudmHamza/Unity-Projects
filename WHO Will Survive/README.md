@@ -14,7 +14,7 @@
 
 >**Game Genre**
 
-Platform
+Platformer
 
 >**Supported Platforms**
 

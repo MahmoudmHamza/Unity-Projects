@@ -16,7 +16,7 @@ Unfortunately, there’s not enough energy for the weapon to be made because Nid
 
 >**Game Genre**
 
-Action/Platform
+Platformer
 
 >**Supported Platforms**
 
