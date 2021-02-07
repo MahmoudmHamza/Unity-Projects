@@ -7,6 +7,10 @@ This game was developed through the Global Game Jam 2021 whose theme was "Lost &
 
 ![](https://github.com/MahmoudmHamza/Unity-Projects/blob/master/KnightMaze/Screenshots/FeatureImage.png)
 
+>**Gameplay Demo**
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/zCgbZslTl2M/0.jpg)](https://www.youtube.com/watch?v=zCgbZslTl2M&feature=youtu.be)
+
 >**Game Features**
 
 * Randomly generated maze.
