@@ -4,12 +4,9 @@
 
 **KnightMaze** is 2D platformer game in which you control a knight trapped in a cursed castle and the only way to escape is to find the magical orb that can teleport you out of this nightmare. The cursed castle will try to stop you by any mean starting from generating a new maze each new level, planting ground flames and creating fake wall blocks.
 
-![](https://github.com/MahmoudmHamza/Unity3D-Game-Development-Projects/blob/master/KnightMaze/Screenshots/FeatureImage.PNG)
-
 >**Game Features**
 
-* Click & Kill game.
-* Difficulty system.
+* Randomly generated maze.
 * 2D Animation.
 
 >**Game Genre**
