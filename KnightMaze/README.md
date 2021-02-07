@@ -6,7 +6,7 @@
 This game was developed through the Global Game Jam 2021 whose theme was "Lost & Found".
 
 <p align="center">
-  <img width="720" height="720" src="https://github.com/MahmoudmHamza/Unity-Projects/blob/master/KnightMaze/Screenshots/FeatureImage.png">
+  <img width="512" height="512" src="https://github.com/MahmoudmHamza/Unity-Projects/blob/master/KnightMaze/Screenshots/FeatureImage.png">
 </p>
 
 >**Gameplay Demo**
